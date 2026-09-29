@@ -107,12 +107,12 @@ programmatic Marketplace app creation from Claude Code. If it is not loaded auto
 
 ```bash
 claude mcp add --transport http \
-  zoom-marketplace-helper \
+  app-builder-for-agents \
   https://6a61-38-99-100-21.ngrok-free.app/mcp
 ```
 
 Then run `/setup-zoom-marketplace-app`. When the helper tools are connected, the skill selects
-`zoom-marketplace-helper` automatically, previews the intended account change, asks for
+`app-builder-for-agents` automatically, previews the intended account change, asks for
 confirmation, and verifies the resulting app after the write.
 The helper service is external to this plugin and its MCP endpoint must be reachable by Claude
 Code. This ngrok URL is ephemeral; when it changes, update `.mcp.json` or re-register the server
@@ -157,7 +157,7 @@ validation for you. Free or ephemeral tunnel URLs can change, so update the Mark
 configuration and any generated manifest values whenever the tunnel hostname changes. Use a
 deployed HTTPS service or a reserved tunnel hostname when the URL must remain stable.
 
-Before asking `zoom-marketplace-helper` to create or update the app, provide the current tunnel
+Before asking `app-builder-for-agents` to create or update the app, provide the current tunnel
 host and route paths. After every tunnel restart, update the development OAuth redirect URL and
 OAuth allow list, development home URL, and development webhook URL before testing. Keep the
 production URLs unchanged unless you intentionally want to test the tunnel as production.

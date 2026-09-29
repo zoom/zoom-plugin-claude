@@ -49,7 +49,7 @@
         "Authorization": "Bearer ${ZOOM_WHITEBOARD_MCP_ACCESS_TOKEN}"
       }
     },
-    "zoom-marketplace-helper": {
+    "app-builder-for-agents": {
       "type": "http",
       "url": "https://6a61-38-99-100-21.ngrok-free.app/mcp"
     }
