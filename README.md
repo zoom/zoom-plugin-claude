@@ -106,12 +106,12 @@ MCP server first:
 
 ```bash
 claude mcp add --transport http \
-  zoom-marketplace-helper \
+  app-builder-for-agents \
   https://marketplacehelper.asdc.cc/mcp
 ```
 
 Then run `/setup-zoom-marketplace-app`. When the helper tools are connected, the skill selects
-`zoom-marketplace-helper` automatically, previews the intended account change, asks for
+`app-builder-for-agents` automatically, previews the intended account change, asks for
 confirmation, and verifies the resulting app after the write.
 The helper is external to this plugin and its MCP endpoint must already be reachable by Claude Code.
 If the helper endpoint changes, re-register the Claude Code MCP server with the new `/mcp` URL.
@@ -153,7 +153,7 @@ validation for you. Free or ephemeral tunnel URLs can change, so update the Mark
 configuration and any generated manifest values whenever the tunnel hostname changes. Use a
 deployed HTTPS service or a reserved tunnel hostname when the URL must remain stable.
 
-Before asking `zoom-marketplace-helper` to create or update the app, provide the current tunnel
+Before asking `app-builder-for-agents` to create or update the app, provide the current tunnel
 host and route paths. After every tunnel restart, update the development OAuth redirect URL and
 OAuth allow list, development home URL, and development webhook URL before testing. Keep the
 production URLs unchanged unless you intentionally want to test the tunnel as production.

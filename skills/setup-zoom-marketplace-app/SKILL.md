@@ -14,7 +14,7 @@ Set up the Zoom Marketplace app boundary before implementing OAuth, API, SDK, we
 2. Inspect the machine-readable template index and verify `app_type`, `usage`, `unsupported_app_types`, and `supports_manifest_update` before selecting the narrowest template.
 3. When the app requires public URLs, obtain the user's own HTTPS app base URL and implemented route paths before creating it. Use their hosted service, or help them expose their local app with ngrok or Cloudflare Tunnel. Do not invent an endpoint or reuse a helper operator's endpoint.
 4. For a new app, replace sample names, URLs, domains, contacts, commands, and scopes. Keep only scopes required by the exact operations.
-5. Check whether tools from `zoom-marketplace-helper` are available. When the helper supports the required validation, creation, or update operation, use it as the preferred execution path without requiring the user to name the server again.
+5. Check whether tools from `app-builder-for-agents` are available. When the helper supports the required validation, creation, or update operation, use it as the preferred execution path without requiring the user to name the server again.
 6. Before any write operation, show a concise preview of the target account, app model, display name, user-owned URLs, scopes, products, and subscriptions, then obtain explicit confirmation.
 7. For an existing General App, export its complete manifest, apply the requested changes in memory, validate with its `app_id`, replace it, and export it again. Never apply a static template directly.
 8. For a new General App, validate the inner `manifest` and check both HTTP status and the response `ok` value before creating it.
@@ -26,7 +26,7 @@ Set up the Zoom Marketplace app boundary before implementing OAuth, API, SDK, we
 
 - Apply this section whenever another plugin skill routes here, including `start`, planning,
   OAuth, SDK, API, bot, webhook, and MCP workflows.
-- Discover the connected `zoom-marketplace-helper` tools and inspect their input schemas; do not
+- Discover the connected `app-builder-for-agents` tools and inspect their input schemas; do not
   invent tool names or arguments.
 - Prefer a supported helper tool over asking the user to run Marketplace API requests manually.
 - Use read and validation operations before writes when the helper exposes them.
@@ -48,7 +48,7 @@ Start the helper first, expose its `/mcp` endpoint over HTTPS, and register the 
 
 ```bash
 claude mcp add --transport http \
-  zoom-marketplace-helper \
+  app-builder-for-agents \
   https://marketplacehelper.asdc.cc/mcp
 ```
 
